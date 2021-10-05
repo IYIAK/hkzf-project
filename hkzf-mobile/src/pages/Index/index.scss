@@ -1,0 +1,184 @@
+.index {
+    position: relative;
+}
+
+.search-box{
+    position: absolute;
+    top: 25px;
+    width: 100%;  /* Flex组件一定要设置宽度（高度） */
+    z-index:1;
+    padding: 0 10px;
+
+    .search {
+        flex:1;  /* 能占的地方占满 */
+        height: 34px;
+        margin: 0 10px;
+        padding: 5px 5px 5px 5px;
+        border-radius: 3px;
+        background-color: #fff;
+
+        .location {
+            margin-left: 5px;
+            .icon-arrow{
+                margin-left: 2px;
+                font-size: 12px;
+                color: #7f7f80;
+            }
+        }
+
+        .form {
+            border-left:solid 1px #e5e5e5;
+            margin-left: 12px;
+            padding-left: 16px;
+
+            .icon-seach{
+                color: #7f7f80;
+                vertical-align: middle;
+                font-size: 15px;
+                padding: 0 4px 0 0;
+            }
+
+            .text{
+                color: #7f7f80;
+                font-size: 13px;
+            }
+
+        }
+    }
+
+    .icon-map{
+        font-size: 25px;
+        color: #fff;
+    }
+}
+
+
+.swiper {
+    height: 212px;
+}
+
+.nav {
+    padding: 10px 0;
+
+    .am-flexbox-item {  /* 类名是自动是生成的，网页按F12查看并复制即可 */
+        text-align: center;  /* 这个要加给父容器，加给里面的图片或文字是不行的 */
+        
+    }
+
+    img {
+        width: 48px;
+    }
+    
+    h2 {
+        font-size: 12px;
+        font-weight: normal;
+        margin-top: 7px
+    }
+}
+
+
+.group {
+    background-color: #f5f4f6;
+    overflow: hidden;
+    padding: 0 10px;
+    >.title{
+        // height: 30px;
+        // line-height: 30px;
+        // margin-top: 0;
+        padding: 0 20px;
+        background-color: #f5f4f6;
+        font-size: 15px;
+
+        .more {
+            float: right;
+            font-weight: normal;
+            color: #838485;
+            font-size: 14px;
+        }
+    }
+
+
+
+    .group-item{
+        .desc {
+            .title{
+                font-size: 13px;
+                font-weight: 600;
+                margin-bottom: 5px;
+            }
+
+            .info{
+                font-size: 12px;
+                color:#838485;
+            }
+        }
+
+        img {
+            height: 55px;
+        }
+    }
+
+    .am-grid .am-flexbox{  /* 两个类名都要写，权重问题 */
+        background-color: inherit;
+        margin-bottom: 10px;
+    }
+
+
+
+    .am-grid-item{
+        background-color: #fff;
+    }
+
+    .am-grid-item:first-child{
+        background-color: #fff;
+        margin-right: 10px;
+    }
+
+    .am-grid .am-flexbox .am-flexbox-item .am-grid-item-content{
+        padding: 10px;
+    }
+}
+    
+
+.news{
+    padding: 0 5px;
+    >.title{
+        padding-left: 10px;
+        font-size: 15px
+    }
+
+    .news-item{
+        height: 120px;
+        padding: 15px 10px 15px 0;
+        border-bottom: 1px solid #e5e5e5;
+
+        .imgwrap{
+            height: 90px;
+            width: 120px;
+            float: left;
+            img{
+                height: 90px;
+                width: 120px;
+            }
+        }
+
+        .content{
+            overflow: hidden;
+            height: 100%;
+            padding-left: 15px;
+            .title {
+                margin-top: 0;
+            }
+
+            .info{
+                width: 100%;
+            }
+        }
+
+
+    }
+
+    .news-item:last-child {
+        border: 0;
+      }
+}

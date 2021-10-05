@@ -1,0 +1,14 @@
+.citylist{
+    height: 100%;
+    padding-top: 45px; /* 这里设置上边距,导航栏外边距再设为负值,可以使导航栏位置不变,但是令autoSizer设置的列表高度等于页面高度减去导航栏高度,避免了导航栏也可以滚动的bug */
+
+    .am-navbar-light{  /* 不能给antd组件名设置样式，要用审核元素找到最后渲染出的DOM标签名 */
+        margin-top: -45px;
+        background-color: #f5f5f6;
+        color: #000;
+    }
+
+    .am-navbar-light .am-navbar-title{
+        color:#333;
+    }
+}
