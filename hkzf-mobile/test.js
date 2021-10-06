@@ -73,4 +73,33 @@ async function f3() {
     console.log(data);
 }
 
-f3()
+async function f4() {
+    await new Promise((resolve) => {
+        new Promise((resolve2) => {
+            setTimeout(() => {
+                console.log("promise{promise}");
+
+            }, 300);
+            resolve('1')
+        })
+        // resolve('1')
+    })
+
+    console.log('f4');
+}
+
+// f4()
+
+async function f5() {
+    var data = await new Promise((resolve) => {
+        data = 0
+        setTimeout(() => {
+            console.log('异步操作');
+            data = 1
+        }, 300);
+        console.log('同步操作');
+        resolve(data)
+    })
+    console.log('外部操作 输出data:', data);
+}
+f5()

@@ -11,8 +11,12 @@ body {
     touch-action: pan-y;
 }
 
-h2{
+h2,ul{
     margin: 0;
+}
+
+li{
+    list-style: none;
 }
 
 #root,
