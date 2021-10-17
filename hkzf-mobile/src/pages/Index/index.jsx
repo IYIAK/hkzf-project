@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { Carousel, Flex, Grid, WingBlank } from 'antd-mobile';
-import axios from 'axios'
+// import axios from 'axios'
+import { API } from '../../utils/api'
 
 import { getCurrentCity } from '../../utils'
+import { BASE_URL } from "../../utils/url"
 
 // 导入图片
 import Nav1 from '../../assets/images/nav-1.png'
@@ -10,6 +12,7 @@ import Nav2 from '../../assets/images/nav-2.png'
 import Nav3 from '../../assets/images/nav-3.png'
 import Nav4 from '../../assets/images/nav-4.png'
 
+import SearchHeader from '../../components/SearchHeader'
 // 导入样式
 import "./index.scss"
 
@@ -59,13 +62,13 @@ export default class Index extends Component {
     }
 
     async getSwiper() {
-        const res = await axios.get('http://localhost:8080/home/swiper')
+        const res = await API.get('/home/swiper')
         // console.log(res)
         this.setState({ swiper: res.data.body, isSwiperLoaded: true })
     }
 
     async getGroups() {
-        const res = await axios.get('http://localhost:8080/home/groups', {
+        const res = await API.get('/home/groups', {
             params: {
                 area: 'AREA%7C88cff55c-aaa4-e2e0'
             }
@@ -75,7 +78,7 @@ export default class Index extends Component {
     }
 
     async getNews() {
-        const res = await axios.get('http://localhost:8080/home/news', {
+        const res = await API.get('/home/news', {
             params: {
                 area: "AREA%7C88cff55c-aaa4-e2e0"
             }
@@ -103,7 +106,7 @@ export default class Index extends Component {
                 style={{ display: 'inline-block', width: '100%', height: 212 }}
             >
                 <img
-                    src={`http://localhost:8080${val.imgSrc}`}
+                    src={BASE_URL + val.imgSrc}
                     alt=""
                     style={{ width: '100%', verticalAlign: 'top' }}
                 />
@@ -127,7 +130,7 @@ export default class Index extends Component {
         return this.state.news.map((item) => (
             <div className="news-item" key={item.id}>
                 <div className="imgwrap">
-                    <img src={`http://localhost:8080${item.imgSrc}`} alt="" />
+                    <img src={BASE_URL + item.imgSrc} alt="" />
                 </div>
                 <Flex className="content" direction='column' justify="between">  {/* 用 Flex必须在css里设置好宽度或高度 */}
                     <h3 className="title">{item.title}</h3>
@@ -146,32 +149,7 @@ export default class Index extends Component {
         return (
             <div className="index">
                 {/* 搜索框 */}
-                <Flex className="search-box">
-                    <Flex className="search">
-
-                        {/* 城市名 */}
-                        <div
-                            className="location"
-                            onClick={() => this.props.history.push('/citylist')}
-                        >
-                            <span className="name">{this.state.currentCityName}</span>
-                            <i className="iconfont icon-arrow"></i>
-                        </div>
-
-                        {/* 搜索框 */}
-                        <div
-                            className="form"
-                            onClick={() => this.props.history.push('/search')}
-                        >
-                            <i className="iconfont icon-seach"></i>
-                            <span className="text">请输入小区或地址</span>
-                        </div>
-                    </Flex>
-                    <i
-                        className="iconfont icon-map"
-                        onClick={() => this.props.history.push('/map')}
-                    ></i>
-                </Flex>
+                <SearchHeader cityName={this.state.currentCityName}></SearchHeader>
 
 
                 {/* 轮播图 */}
@@ -204,7 +182,7 @@ export default class Index extends Component {
                                     <p className="title">{item.title}</p>
                                     <span className="info">{item.desc}</span>
                                 </div>
-                                <img src={`http://localhost:8080${item.imgSrc}`} alt="" />
+                                <img src={BASE_URL + item.imgSrc} alt="" />
                             </Flex>
                         )
                     }} />

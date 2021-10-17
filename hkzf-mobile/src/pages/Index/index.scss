@@ -2,55 +2,55 @@
     position: relative;
 }
 
-.search-box{
-    position: absolute;
-    top: 25px;
-    width: 100%;  /* Flex组件一定要设置宽度（高度） */
-    z-index:1;
-    padding: 0 10px;
+// .search-box{
+//     position: absolute;
+//     top: 25px;
+//     width: 100%;  /* Flex组件一定要设置宽度（高度） */
+//     z-index:1;
+//     padding: 0 10px;
 
-    .search {
-        flex:1;  /* 能占的地方占满 */
-        height: 34px;
-        margin: 0 10px;
-        padding: 5px 5px 5px 5px;
-        border-radius: 3px;
-        background-color: #fff;
+//     .search {
+//         flex:1;  /* 能占的地方占满 */
+//         height: 34px;
+//         margin: 0 10px;
+//         padding: 5px 5px 5px 5px;
+//         border-radius: 3px;
+//         background-color: #fff;
 
-        .location {
-            margin-left: 5px;
-            .icon-arrow{
-                margin-left: 2px;
-                font-size: 12px;
-                color: #7f7f80;
-            }
-        }
+//         .location {
+//             margin-left: 5px;
+//             .icon-arrow{
+//                 margin-left: 2px;
+//                 font-size: 12px;
+//                 color: #7f7f80;
+//             }
+//         }
 
-        .form {
-            border-left:solid 1px #e5e5e5;
-            margin-left: 12px;
-            padding-left: 16px;
+//         .form {
+//             border-left:solid 1px #e5e5e5;
+//             margin-left: 12px;
+//             padding-left: 16px;
 
-            .icon-seach{
-                color: #7f7f80;
-                vertical-align: middle;
-                font-size: 15px;
-                padding: 0 4px 0 0;
-            }
+//             .icon-seach{
+//                 color: #7f7f80;
+//                 vertical-align: middle;
+//                 font-size: 15px;
+//                 padding: 0 4px 0 0;
+//             }
 
-            .text{
-                color: #7f7f80;
-                font-size: 13px;
-            }
+//             .text{
+//                 color: #7f7f80;
+//                 font-size: 13px;
+//             }
 
-        }
-    }
+//         }
+//     }
 
-    .icon-map{
-        font-size: 25px;
-        color: #fff;
-    }
-}
+//     .icon-map{
+//         font-size: 25px;
+//         color: #fff;
+//     }
+// }
 
 
 .swiper {

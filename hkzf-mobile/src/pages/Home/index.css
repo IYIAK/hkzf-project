@@ -6,7 +6,16 @@
     font-size: 20px !important;
 }
 
-.home .am-tab-bar-bar {
+/* .home .am-tab-bar-bar {
     position: fixed;
     bottom: 0;
-}
+} */
+
+.home .am-tab-bar {
+    height: 50px;
+    overflow: hidden;
+    position: fixed;  /* 加了fixed定位后，元素的层级会比absolute和relative低，也就是低于relative的filterMoreRoot，这样能保证不会压住filterMore */
+    bottom: 0;
+    width: 100%;
+  }
+  

@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
-import { NavBar, Toast } from 'antd-mobile';
+import { Toast } from 'antd-mobile';
 import axios from 'axios'
 import { AutoSizer, List } from 'react-virtualized';
+
+import NavHeader from '../../components/NavHeader'
+
 // 引入样式文件
 import "./index.scss"
 
@@ -69,6 +72,8 @@ export default class CityList extends Component {
 
 
     async getCityList() {
+        Toast.loading('加载中...', 0, null, false)
+
         // 获取所有城市
         const res = await axios.get("http://localhost:8080/area/city?level=1")
         // console.log(res);
@@ -85,6 +90,8 @@ export default class CityList extends Component {
         // console.log(curCity);
         cityList['#'] = [curCity]
         cityIndex.unshift('#')
+
+        Toast.hide()
 
         // console.log(cityList, cityIndex);
         // console.log('this2', this);
@@ -170,11 +177,7 @@ export default class CityList extends Component {
             <div className="citylist">
 
                 {/* 顶部导航栏 */}
-                <NavBar
-                    mode="light"
-                    icon={<i className="iconfont icon-back" />}
-                    onLeftClick={() => this.props.history.goBack()}
-                >城市选择</NavBar>
+                <NavHeader>城市选择</NavHeader>
 
 
                 {/* 城市列表 */}
