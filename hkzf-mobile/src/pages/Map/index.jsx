@@ -25,10 +25,12 @@ export default class Map extends Component {
 
     componentDidMount() {
         this.initMap()
-
     }
 
-
+    componentWillUnmount() {
+        // 切换页面组件后去掉加载中的toast
+        Toast.hide()
+    }
 
     // 与地图有关的所有操作
     initMap = () => {
@@ -268,7 +270,7 @@ export default class Map extends Component {
 
     render() {
         return (
-            <div className="map">
+            <div className="mapRoot">
                 <NavHeader>地图找房</NavHeader>
                 {/* 地图容器元素 */}
                 <div id="container"></div>

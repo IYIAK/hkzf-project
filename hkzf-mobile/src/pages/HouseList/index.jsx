@@ -20,7 +20,6 @@ export default class HouseList extends Component {
     state = {
         list: [],
         count: 0,
-        nowTop: 20,
         isLoaded: false  //用于判断数据是否加载完成
     }
 
@@ -78,6 +77,12 @@ export default class HouseList extends Component {
         this.searchHouseList()
     }
 
+    componentWillUnmount() {
+        // 切换页面组件后去掉加载中的toast
+        Toast.hide()
+    }
+
+
 
     //每一行的内容
     renderHouseList = ({
@@ -107,7 +112,8 @@ export default class HouseList extends Component {
                 title={house.title}
                 desc={house.desc}
                 tags={house.tags}
-                price={house.price} />
+                price={house.price}
+                onClick={() => { this.props.history.push(`/detail/${house.houseCode}`) }} />
         );
     }
 
@@ -143,8 +149,6 @@ export default class HouseList extends Component {
                 resolve()
             })
         }
-
-
     }
 
 
@@ -193,7 +197,7 @@ export default class HouseList extends Component {
 
     render() {
         return (
-            <div>
+            <div className="houseListRoot">
 
                 {/* 搜索栏 */}
                 <Flex className='header'>

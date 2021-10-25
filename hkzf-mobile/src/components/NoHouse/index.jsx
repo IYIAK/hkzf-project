@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 import { BASE_URL } from "../../utils/url";
 import './index.scss'
 
+
+/* 房源列表页无数据时的提示页 */
 const NoHouse = ({ children }) => (
     <div>
         <div className="noHouseRoot">
@@ -14,7 +16,7 @@ const NoHouse = ({ children }) => (
 
 
 NoHouse.protoTypes = {
-    children: PropTypes.string.isRequired
+    children: PropTypes.node.isRequired
 }
 
 export default NoHouse

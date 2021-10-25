@@ -9,16 +9,13 @@ import './index.scss'
 class NavHeader extends Component {
     render() {
         return (
-            <div>
-                {/* 顶部导航栏 */}
-                <NavBar
-                    mode="light"
-                    icon={< i className="iconfont icon-back" />}
-                    onLeftClick={this.props.onLeftClick === undefined ? () => this.props.history.goBack() : this.props.onLeftClick}
-                >
-                    {this.props.children}
-                </NavBar >
-            </div>
+            <NavBar
+                mode="light"
+                icon={< i className="iconfont icon-back" />}
+                onLeftClick={this.props.onLeftClick === undefined ? () => this.props.history.goBack() : this.props.onLeftClick}
+            >
+                {this.props.children}
+            </NavBar >
 
         )
     }

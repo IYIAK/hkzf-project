@@ -1,16 +1,17 @@
-import React, { Component } from 'react'
+import React, { Component, lazy, Suspense } from 'react'
 import { Route } from 'react-router-dom'
 import { TabBar } from 'antd-mobile';
 
 import './index.css'
 
-import News from '../News'
-
 import Index from '../Index'
-import HouseList from '../HouseList'
-import Profile from '../Profile'
+// import News from '../News'
+// import HouseList from '../HouseList'
+// import Profile from '../Profile'
 
-
+const News = lazy(() => import('../News'))
+const HouseList = lazy(() => import('../HouseList'))
+const Profile = lazy(() => import('../Profile'))
 
 const tabItems = [
     {
@@ -24,7 +25,7 @@ const tabItems = [
         path: "/home/list"
     },
     {
-        title: "咨询",
+        title: "资讯",
         icon: "icon-infom",
         path: "/home/news"
     },

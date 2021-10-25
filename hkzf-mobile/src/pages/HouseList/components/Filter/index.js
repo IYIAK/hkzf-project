@@ -334,9 +334,16 @@ export default class Filter extends Component {
       <Spring from={{ opacity: 0 }} to={{ opacity: isHide ? 0 : 1 }}>
         {props => {
           // 说明遮罩层已经完成动画效果，隐藏了
-          // 这里失效了，props.opacity不是数组,所以直接用isHide判断
-          if (isHide === true) {
-            return null
+          // 这里失效了，props.opacity不是数字,所以直接用isHide判断
+
+          // if (isHide === true) {
+          //   return null
+          // }
+
+          //试了一下又可以了
+          // console.log('props', props);
+          if (props.opacity === 0) {
+            return null;
           }
 
           return (

@@ -1,7 +1,6 @@
 import axios from 'axios'
 
 
-
 export const getCurrentCity = async () => {
     // 从本地存储中获取当前城市
     const localCity = JSON.parse(localStorage.getItem('hkzf_city'))
@@ -61,3 +60,8 @@ export const getCurrentCity = async () => {
     // 注意:因为上面是返回promise,为了返回值的统一,这里也要返回promise
     return Promise.resolve(localCity)
 }
+
+export { API } from './api'
+export { BASE_URL } from './url'
+export { getToken, setToken, removeToken, isAuth } from './auth'
+export { getCity, setCity } from "./city"
